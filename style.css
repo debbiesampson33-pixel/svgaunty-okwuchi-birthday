@@ -1,0 +1,903 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff8fb;
+    color: #3d2630;
+    line-height: 1.7;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #6b2148, #b85c83);
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: heroEntrance 1.8s ease;
+}
+
+@keyframes heroEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.small-text {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(35px, 6vw, 55px);
+    margin-bottom: 25px;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+/* BUTTON */
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: white;
+    color: #6b2148;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+}
+
+/* BIRTHDAY */
+
+.birthday {
+    background: #fff8fb;
+}
+
+.main-message {
+    font-size: 24px;
+}
+
+.heart,
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 35px 0;
+}
+
+.countdown div {
+    min-width: 100px;
+    padding: 20px 15px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(80, 30, 50, 0.1);
+}
+
+.countdown span {
+    display: block;
+    font-size: 38px;
+    font-weight: bold;
+    color: #8d3c62;
+}
+
+.countdown small {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* APPRECIATION */
+
+.appreciation {
+    background: #f8e4ec;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 280px;
+    box-shadow: 0 10px 30px rgba(80, 30, 50, 0.1);
+}
+
+.card span {
+    font-size: 45px;
+}
+
+/* MEMORIES */
+
+.memories {
+    background: #fff;
+}
+
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.photo-placeholder {
+    width: 280px;
+    height: 280px;
+    border: 3px dashed #b85c83;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b5069;
+}
+
+/* FINAL */
+
+.final {
+    background: linear-gradient(135deg, #4b1734, #8d3c62);
+    color: white;
+}
+
+.signature {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+#videoMessage {
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* PHONE */
+
+@media (max-width: 700px) {
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .photo-placeholder {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .countdown div {
+        min-width: 75px;
+        padding: 15px 10px;
+    }
+
+    .countdown span {
+        font-size: 28px;
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: floatHeart 6s linear forwards;
+    z-index: 999;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.special {
+    background: #fdf0f5;
+}
+
+.special-intro {
+    font-size: 22px;
+}
+
+.special-message {
+    max-width: 750px;
+    margin: 35px auto 0;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(80, 30, 50, 0.1);
+}
+
+.special-message p {
+    margin-bottom: 25px;
+}
+
+.special-message .highlight {
+    font-size: 23px;
+    font-weight: bold;
+    color: #8d3c62;
+}
+
+.family-messages {
+    background: #fff8fb;
+}
+
+.family-intro {
+    font-size: 21px;
+}
+
+.message-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.message-card {
+    background: white;
+    width: 280px;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(80, 30, 50, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(80, 30, 50, 0.18);
+}
+
+.message-icon {
+    font-size: 38px;
+}
+
+.message-card h3 {
+    color: #8d3c62;
+    font-size: 22px;
+}
+
+.message-card p {
+    font-size: 17px;
+}
+
+/* FAMILY MESSAGES TWO-COLUMN LAYOUT */
+
+.family-messages {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #fff8f8, #ffffff);
+}
+
+.family-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.family-intro {
+    text-align: center;
+    padding: 30px;
+}
+
+.family-heart {
+    font-size: 60px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.family-intro h2 {
+    font-size: 38px;
+    margin: 15px 0 10px;
+}
+
+.family-intro h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.family-intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.big-heart {
+    font-size: 45px;
+    margin-top: 20px;
+}
+
+.family-messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.family-messages .message-card {
+    padding: 25px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.family-messages .message-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.family-messages .message-card h3 {
+    margin-bottom: 12px;
+}
+
+.family-messages .message-card p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.family-messages .message-card strong {
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* MOBILE VIEW */
+
+@media (max-width: 700px) {
+
+    .family-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .family-intro h2 {
+        font-size: 30px;
+    }
+
+    .family-intro h3 {
+        font-size: 22px;
+    }
+
+    .family-messages .message-card {
+        padding: 20px;
+    }
+
+}
+
+/* FIX FAMILY MESSAGES LAYOUT */
+
+.family-messages .family-container {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1.3fr !important;
+    gap: 50px !important;
+    align-items: center !important;
+}
+
+.family-messages .family-intro {
+    text-align: center !important;
+    width: auto !important;
+}
+
+.family-messages .family-messages-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: auto !important;
+}
+
+.family-messages .message-card {
+    width: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* PHONE VIEW */
+@media (max-width: 700px) {
+    .family-messages .family-container {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .family-messages .family-messages-list {
+        width: 100% !important;
+    }
+}
+
+/* FINAL FAMILY MESSAGE FIX */
+
+.family-messages {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 80px 20px !important;
+}
+
+.family-container {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px !important;
+}
+
+.family-intro {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.family-messages-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+.family-messages .message-card {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: white !important;
+    padding: 25px !important;
+    border-radius: 18px !important;
+}
+
+/* PHONE */
+@media (max-width: 700px) {
+    .family-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 🎁 TADA SURPRISE EFFECT */
+
+.birthday-tada {
+    animation: tadaEffect 1s ease;
+}
+
+@keyframes tadaEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.03) rotate(-1deg);
+    }
+
+    40% {
+        transform: scale(1.05) rotate(1deg);
+    }
+
+    60% {
+        transform: scale(1.03) rotate(-1deg);
+    }
+
+    80% {
+        transform: scale(1.01) rotate(1deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.birthday-tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 15px auto 25px;
+    max-width: 700px;
+    opacity: 0.9;
+    animation: fadeIn 1.5s ease;
+}
+
+@media (max-width: 700px) {
+    .birthday-tagline {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+/* BIRTHDAY TADA EFFECT */
+
+.birthday-surprise {
+    animation: tadaEffect 1.2s ease-in-out !important;
+}
+
+@keyframes tadaEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.08) rotate(-2deg);
+    }
+
+    30% {
+        transform: scale(1.08) rotate(2deg);
+    }
+
+    45% {
+        transform: scale(1.08) rotate(-2deg);
+    }
+
+    60% {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+    75% {
+        transform: scale(1.03) rotate(-1deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* FINAL VIDEO SURPRISE */
+
+#videoMessage {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    min-height: 30px;
+}
+
+.video-message-show {
+    animation: videoReveal 1s ease;
+}
+
+@keyframes videoReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 700px) {
+    #videoMessage {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+
+.main-photo {
+    width: 220px;
+    height: 220px;
+    margin: 25px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .main-photo {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+/* BIRTHDAY ANIMATED SURPRISE */
+
+.birthday-video {
+    display: none;
+    margin: 35px auto 0;
+    max-width: 700px;
+    padding: 40px 20px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.birthday-video.show-video {
+    display: block;
+    animation: videoOpen 1s ease;
+}
+
+.video-content {
+    text-align: center;
+    animation: videoContent 1.5s ease;
+}
+
+.video-balloons {
+    font-size: 2.5rem;
+    animation: balloonsFloat 2s ease-in-out infinite;
+}
+
+.video-content h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.video-content p {
+    font-size: 1.15rem;
+    margin: 10px 0;
+}
+
+.video-cake {
+    font-size: 5rem;
+    margin: 25px 0;
+    animation: cakeBounce 1.5s ease-in-out infinite;
+}
+
+.video-confetti {
+    font-size: 1.8rem;
+    margin: 25px 0;
+    animation: confettiMove 1s ease-in-out infinite;
+}
+
+.video-ending {
+    font-weight: bold;
+    margin-top: 25px !important;
+}
+
+@keyframes videoOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes videoContent {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes balloonsFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes confettiMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 700px) {
+    .birthday-video {
+        padding: 30px 15px;
+    }
+
+    .video-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .video-content p {
+        font-size: 1rem;
+    }
+
+    .video-cake {
+        font-size: 4rem;
+    }
+}
+
+/* FINAL MOBILE POLISH */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .hero {
+        min-height: 100vh;
+        padding: 30px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    button {
+        max-width: 90%;
+        padding: 12px 20px;
+    }
+
+    .countdown {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .countdown > div {
+        min-width: 65px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .family-container {
+        grid-template-columns: 1fr;
+    }
+
+    .family-messages-list {
+        width: 100%;
+    }
+
+    .message-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .main-photo {
+        max-width: 80%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .video-content h2 {
+        font-size: 1.5rem;
+    }
+}
