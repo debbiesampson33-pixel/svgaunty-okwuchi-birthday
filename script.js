@@ -21,19 +21,17 @@ function openSurprise() {
 }
 
 
-// ================================
-// ONE MORE SURPRISE
-// ================================
-
 function showVideoMessage() {
-    const message = document.getElementById("videoMessage");
+    const video = document.getElementById("surpriseVideo");
 
-    if (!message) return;
+    if (!video) return;
 
-    message.innerHTML =
-        "🎬 Your special birthday video is coming soon... ❤️";
+    video.classList.add("show-video");
 
-    message.style.display = "block";
+    video.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
 }
 
 
