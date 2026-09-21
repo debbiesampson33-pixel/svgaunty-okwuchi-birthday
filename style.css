@@ -1114,11 +1114,6 @@ button:hover {
 
 
 .birthday-video .video-content {
-    color: #222 !important;
-}
-
-.birthday-video .video-content h2,
-.birthday-video .video-content h3,
-.birthday-video .video-content p {
-    color: #222 !important;
+    color: white !important;
+    background: #222 !important;
 }
