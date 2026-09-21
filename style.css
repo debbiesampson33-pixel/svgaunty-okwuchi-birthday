@@ -1017,3 +1017,97 @@ button:hover {
         font-size: 1rem;
     }
 }
+
+
+/* ONE MORE SURPRISE VIDEO */
+
+.birthday-video {
+    display: none;
+    margin-top: 40px;
+    padding: 50px 25px;
+    border-radius: 30px;
+    background: #fff0f5;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.birthday-video.show-video {
+    display: block;
+    animation: surpriseAppear 1s ease;
+}
+
+.video-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.video-balloons {
+    font-size: 3rem;
+    animation: balloonFloat 2s infinite;
+}
+
+.video-cake {
+    font-size: 5rem;
+    animation: cakePop 1.5s infinite;
+}
+
+.video-confetti {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.video-ending {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@keyframes surpriseAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes balloonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes cakePop {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .birthday-video {
+        padding: 40px 18px;
+    }
+
+    .video-balloons {
+        font-size: 2rem;
+    }
+
+    .video-cake {
+        font-size: 4rem;
+    }
+
+    .video-content h2 {
+        font-size: 1.6rem;
+    }
+}
