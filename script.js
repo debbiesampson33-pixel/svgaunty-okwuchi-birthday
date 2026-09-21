@@ -22,18 +22,17 @@ function openSurprise() {
 
 
 function showVideoMessage() {
-    const video = document.getElementById("surpriseVideo");
+    const message = document.getElementById("surpriseVideo");
 
-    if (!video) return;
+    if (!message) return;
 
-    video.classList.add("show-video");
+    message.classList.add("show-video");
 
-    video.scrollIntoView({
+    message.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
 }
-
 
 // ================================
 // BIRTHDAY COUNTDOWN
