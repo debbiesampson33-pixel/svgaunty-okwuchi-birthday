@@ -21,6 +21,7 @@ function openSurprise() {
 }
 
 
+
 function showVideoMessage() {
     const message = document.getElementById("surpriseVideo");
 
