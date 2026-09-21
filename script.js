@@ -1,5 +1,5 @@
 // ================================
-// OPEN SURPRISE + TA-DA EFFECT
+// OPEN SURPRISE
 // ================================
 
 function openSurprise() {
@@ -8,52 +8,58 @@ function openSurprise() {
     if (!surprise) return;
 
     surprise.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
+        block: "center"
     });
 
-    setTimeout(function () {
-        surprise.classList.add("birthday-surprise");
+    surprise.classList.add("birthday-surprise");
 
-        setTimeout(function () {
-            surprise.classList.remove("birthday-surprise");
-        }, 1200);
-    }, 700);
+    setTimeout(() => {
+        surprise.classList.remove("birthday-surprise");
+    }, 1200);
 }
 
 
+// ================================
+// ONE MORE SURPRISE
+// ================================
 
 function showVideoMessage() {
     const message = document.getElementById("surpriseVideo");
 
     if (!message) return;
 
+    // Make it visible
+    message.style.display = "block";
     message.classList.add("show-video");
 
-    message.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
+    // Move to it
+    setTimeout(() => {
+        message.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }, 50);
 }
+
 
 // ================================
 // BIRTHDAY COUNTDOWN
 // ================================
 
-const birthday = new Date(
-    "September 23, 2026 00:00:00"
-).getTime();
+const birthday = new Date("September 23, 2026 00:00:00").getTime();
 
-const countdown = setInterval(function () {
-
+function updateCountdown() {
     const now = new Date().getTime();
     const difference = birthday - now;
 
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+
     if (difference <= 0) {
-
-        clearInterval(countdown);
-
-        const countdownBox =
-            document.querySelector(".countdown");
+        const countdownBox = document.querySelector(".countdown");
 
         if (countdownBox) {
             countdownBox.innerHTML =
@@ -82,17 +88,14 @@ const countdown = setInterval(function () {
         1000
     );
 
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
-
     if (daysElement) daysElement.textContent = days;
     if (hoursElement) hoursElement.textContent = hours;
     if (minutesElement) minutesElement.textContent = minutes;
     if (secondsElement) secondsElement.textContent = seconds;
+}
 
-}, 1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 
 // ================================
@@ -100,25 +103,20 @@ const countdown = setInterval(function () {
 // ================================
 
 function createHeart() {
-
     const heart = document.createElement("div");
 
-    heart.classList.add("floating-heart");
+    heart.className = "floating-heart";
+    heart.textContent = "❤️";
 
-    heart.innerHTML = "❤️";
-
-    heart.style.left =
-        Math.random() * 100 + "vw";
-
+    heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize =
-        (15 + Math.random() * 25) + "px";
-
+        15 + Math.random() * 25 + "px";
     heart.style.animationDuration =
-        (4 + Math.random() * 4) + "s";
+        4 + Math.random() * 4 + "s";
 
     document.body.appendChild(heart);
 
-    setTimeout(function () {
+    setTimeout(() => {
         heart.remove();
     }, 8000);
 }
@@ -134,32 +132,22 @@ const sections = document.querySelectorAll(
     ".birthday, .appreciation, .memories, .final, .birthday-video-section"
 );
 
-sections.forEach(function (section) {
-    section.classList.add("reveal");
-});
-
-
 function revealSections() {
-
-    sections.forEach(function (section) {
-
+    sections.forEach(section => {
         const sectionTop =
             section.getBoundingClientRect().top;
 
-        const windowHeight =
-            window.innerHeight;
-
-        if (sectionTop < windowHeight - 100) {
+        if (sectionTop < window.innerHeight - 100) {
             section.classList.add("show");
         }
-
     });
-
 }
 
-window.addEventListener(
-    "scroll",
-    revealSections
-);
+sections.forEach(section => {
+    section.classList.add("reveal");
+});
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
 
 revealSections();
