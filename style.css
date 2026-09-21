@@ -901,3 +901,119 @@ button:hover {
         font-size: 1.5rem;
     }
 }
+
+
+/* BIRTHDAY VIDEO */
+
+.birthday-video-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.animated-video {
+    position: relative;
+    max-width: 850px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 25px;
+    background: #fff0f5;
+}
+
+.video-scene {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    animation: showScene 48s infinite;
+}
+
+.video-scene h1 {
+    font-size: 2.8rem;
+}
+
+.video-scene h2 {
+    font-size: 2.2rem;
+}
+
+.video-scene p {
+    max-width: 650px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.scene-one { animation-delay: 0s; }
+.scene-two { animation-delay: 6s; }
+.scene-three { animation-delay: 12s; }
+.scene-four { animation-delay: 18s; }
+.scene-five { animation-delay: 24s; }
+.scene-six { animation-delay: 30s; }
+.scene-seven { animation-delay: 36s; }
+.scene-eight { animation-delay: 42s; }
+
+@keyframes showScene {
+
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    11% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.balloons {
+    font-size: 4rem;
+}
+
+.video-heart {
+    font-size: 6rem;
+}
+
+.cake {
+    font-size: 6rem;
+}
+
+.celebration {
+    font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+
+    .animated-video {
+        height: 480px;
+    }
+
+    .video-scene h1 {
+        font-size: 2rem;
+    }
+
+    .video-scene h2 {
+        font-size: 1.6rem;
+    }
+
+    .video-scene p {
+        font-size: 1rem;
+    }
+}
