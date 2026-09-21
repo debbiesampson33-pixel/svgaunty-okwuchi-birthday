@@ -1114,11 +1114,16 @@ button:hover {
 
 
 
+#surpriseVideo {
+    color: #3d2630 !important;
 }
-#surpriseVideo,
-#surpriseVideo .video-content,
-#surpriseVideo h2,
-#surpriseVideo h3,
-#surpriseVideo p {
-    color: #111 !important;
+
+#surpriseVideo .video-content {
+    color: #3d2630 !important;
+}
+
+#surpriseVideo .video-content h2,
+#surpriseVideo .video-content h3,
+#surpriseVideo .video-content p {
+    color: #3d2630 !important;
 }
