@@ -155,3 +155,10 @@ window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
 revealSections();
+
+
+function playMusic() {
+    const music = new Audio("happybirdayauntyokwuchi.mp3");
+    music.loop = true;
+    music.play();
+}
