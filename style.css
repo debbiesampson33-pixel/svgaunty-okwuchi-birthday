@@ -588,3 +588,9 @@ button:hover {
         max-width: 90%;
     }
 }
+
+
+#surprise.birthday-surprise {
+    animation: tadaEffect 1.2s ease-in-out !important;
+    transform-origin: center center;
+}
