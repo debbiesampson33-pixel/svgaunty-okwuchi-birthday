@@ -4,7 +4,6 @@
 
 function openSurprise() {
     const surprise = document.getElementById("surprise");
-
     if (!surprise) return;
 
     surprise.scrollIntoView({
@@ -12,12 +11,17 @@ function openSurprise() {
         block: "center"
     });
 
-    surprise.classList.add("birthday-surprise");
+    const content = surprise.querySelector(".container");
+    if (!content) return;
 
     setTimeout(() => {
-        surprise.classList.remove("birthday-surprise");
-    }, 1200);
+        content.classList.remove("birthday-surprise");
+        void content.offsetWidth;
+        content.classList.add("birthday-surprise");
+    }, 700);
 }
+
+  
 
 
 // ================================
