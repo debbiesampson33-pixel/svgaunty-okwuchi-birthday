@@ -594,3 +594,39 @@ button:hover {
     animation: tadaEffect 1.2s ease-in-out !important;
     transform-origin: center center;
 }
+
+
+.birthday .container.birthday-surprise {
+    animation: tadaEffect 1.2s ease-in-out !important;
+    transform-origin: center center;
+}
+
+@keyframes tadaEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12) rotate(-3deg);
+    }
+
+    30% {
+        transform: scale(1.12) rotate(3deg);
+    }
+
+    45% {
+        transform: scale(1.12) rotate(-3deg);
+    }
+
+    60% {
+        transform: scale(1.08) rotate(3deg);
+    }
+
+    75% {
+        transform: scale(1.04) rotate(-2deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
